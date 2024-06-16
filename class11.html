@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Classes 365</title>
+    <link rel="stylesheet" href="/css/index.css">
+    <link rel="stylesheet" href="/css/class-notes.css">
+    <script src="https://kit.fontawesome.com/1f0d83d9cc.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container">
+        <nav>
+            <img src="/image/logo.png" class="logo">
+            <a href=""><i class="fa-solid fa-bars hamburger" id="myLink"></i></a>
+                <div id="myDiv">
+                    <ul>
+                      <li><a href="index.html">HOME</a></li>
+                      <li><a href="class-notes.html">NOTES</a></li>
+                      <li><a href="https://www.youtube.com/@Classes365official">VIDEOS</a></li>
+                      <li><a href="">BLOGS</a></li>
+                      <li><a href="#about">ABOHUT US</a></li>
+                      <li><a href="contact.html">CONTACT</a></li>
+                  </ul>
+                </div>
+        </nav>
+    </div>
+    <script>
+        const myLink = document.getElementById("myLink");
+        const myDiv = document.getElementById("myDiv");
+  
+        myLink.addEventListener("click", function(event) {
+        event.preventDefault();
+    
+        if (myDiv.style.display === "none") {
+        myDiv.style.display = "block";
+        } else {
+        myDiv.style.display = "none";
+        }
+        });
+      </script> 
+
+    <div class="box">
+        <div class="class-name"><a href="">PHYSICS</a></div>
+        <div class="class-name"><a href="">MATHEMATICS</a></div>       
+        <div class="class-name"><a href="">CHEMISTRY</a></div>
+        <div class="class-name"><a href="">BIOLOGY</a></div>
+        <div class="class-name"><a href="">ENGLISH</a></div>
+        <div class="class-name"><a href="">ASSAMESE</a></div>
+    </div>
+</body>
+</html>
