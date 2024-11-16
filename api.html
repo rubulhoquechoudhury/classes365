@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Random Jokes</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 20px;
+      background-color: #f0f8ff;
+    }
+    button {
+      padding: 10px 20px;
+      font-size: 16px;
+      cursor: pointer;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+    .joke {
+      margin-top: 20px;
+      font-size: 18px;
+      color: #333;
+    }
+  </style>
+</head>
+<body>
+  <h1>Get a Random Joke</h1>
+  <button id="jokeButton">Show Me a Joke</button>
+  <div class="joke" id="joke"></div>
+
+  <script>
+    const jokeButton = document.getElementById('jokeButton');
+    const jokeDiv = document.getElementById('joke');
+
+    jokeButton.addEventListener('click', () => {
+      // Replace YOUR_API_KEY with your actual API key
+      const apiKey = 'UKjnt7R/t54haB5UmR3aAg==AAegQnXUiDGRnnXP';
+      const apiUrl = 'https://api.api-ninjas.com/v1/jokes';
+
+      fetch(apiUrl, {
+        headers: { 'X-Api-Key': apiKey }
+      })
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Network response was not ok');
+        }
+        return response.json();
+      })
+      .then(data => {
+        // Display the joke on the page
+        if (data.length > 0) {
+          jokeDiv.textContent = data[0].joke;
+        } else {
+          jokeDiv.textContent = 'No jokes available right now!';
+        }
+      })
+      .catch(error => {
+        console.error('There was a problem with the fetch operation:', error);
+        jokeDiv.textContent = 'Failed to fetch a joke. Try again later.';
+      });
+    });
+  </script>
+</body>
+</html>
